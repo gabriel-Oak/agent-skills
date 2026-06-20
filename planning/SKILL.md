@@ -29,7 +29,7 @@ Every plan in `.plans/` must follow this structure:
 1. **Title and Objective**: What are we building?
 2. **Visual Diagram**: Mermaid diagram of the architecture/flow.
 3. **Todo List**: List of atomic tasks with checkboxes (e.g., `- [ ] Task 1`).
-4. **Task Details**: Specific instructions for each task (files to create/modify, logic to implement, acceptance criteria).
+4. **Task Details**: Specific instructions for each task (files to create/modify, logic to implement, acceptance criteria, and immediate unit test requirements for components/hooks).
 5. **Execution Order**: Recommended sequence (e.g., `1.1 -> 1.2 -> 2.1`).
 
 ## 📝 Task Format in the Plan
