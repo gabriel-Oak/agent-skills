@@ -32,41 +32,6 @@ Todo plano em `.plans/` deve seguir esta estrutura:
 4. **Detalhamento das Tarefas**: Instruções específicas para cada tarefa (arquivos a criar/modificar, lógica a implementar, critérios de aceitação).
 5. **Ordem de Execução**: Sequência recomendada (ex: `1.1 -> 1.2 -> 2.1`).
 
-## 🔄 Fluxo de Execução (O Loop)
-
-Ao executar um plano, o Pi (agente principal) deve orquestrar um loop utilizando `pi-subagents`:
-
-```mermaid
-sequenceDiagram
-    participant Pi as Main Agent (Pi)
-    participant Plan as .plans/ Plan File
-    participant Sub as Subagent (pi-subagents)
-
-    Pi->>Plan: Load Plan
-    loop For each unchecked task
-        Pi->>Sub: Delegate Task
-        Note right of Sub: Subagent executes task
-        Sub->>Sub: Implement Code
-        Sub->>Sub: Run Unit Tests
-        Sub->>Sub: Run Linting
-        Sub->>Plan: Update Todo List (mark [x])
-        Sub->>Sub: Commit Changes
-        Sub-->>Pi: Return Result
-        Pi->>Pi: Check Next Task
-    end
-    Pi->>Pi: Plan Complete
-```
-
-### Passos para o Agente Principal (Pi):
-1. **Read**: Leia o plano em `.plans/`.
-2. **Select**: Selecione a primeira tarefa não marcada.
-3. **Delegate**: Delegue a tarefa para um subagent `pi-subagents` com as instruções específicas do plano.
-4. **Wait**: Aguarde o subagent terminar.
-5. **Verify**: Verifique os resultados (os testes passaram? o lint passou?).
-6. **Update**: Atualize o arquivo do plano (mude `- [ ]` para `- [x]`).
-7. **Commit**: Confirme o progresso (ou garanta que o subagent fez o commit).
-8. **Repeat**: Repita até que todas as tarefas estejam concluídas.
-
 ## 📝 Formato de Tarefa no Plano
 
 Para cada tarefa no plano, inclua:
