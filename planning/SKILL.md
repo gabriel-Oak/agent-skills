@@ -6,54 +6,54 @@ description: Triggers whenever creating plans. Use for feature planning, task br
 # 📋 Planning Skill
 
 ## 🚀 Trigger
-Ative esta skill sempre que:
-- Você precisar criar um plano técnico para uma feature ou correção.
-- Você estiver executando um plano definido em `.plans/`.
-- Você precisar quebrar uma solicitação complexa em passos menores e implementáveis.
+Activate this skill whenever:
+- You need to create a technical plan for a feature or fix.
+- You are executing a plan defined in `.plans/`.
+- You need to break down a complex request into smaller, implementable steps.
 
-## 📂 Armazenamento
-Todos os planos devem ser salvos no diretório `.plans/`.
-- Convenção de nomes: `PLANO-<FEATURE>.md`.
+## 📂 Storage
+All plans must be saved in the `.plans/` directory.
+- Naming convention: `PLAN-<FEATURE>.md`.
 
-## 🧠 Princípios Core
+## 🧠 Core Principles
 
-1. **Quebre em pequenas tarefas (Atomic Tasks)**: Divida features grandes em tarefas pequenas e autônomas que um subagent pode executar isoladamente (ex: "Criar migração DB", "Atualizar API route", "Corrigir componente").
-2. **Clareza visual**: Sempre inclua um diagrama visual (Mermaid) explicando a arquitetura ou o fluxo.
-3. **Rastreabilidade**: Mantenha uma `Todo List` clara com checkboxes para rastrear o status.
-4. **Isolamento**: As tarefas devem ser independentes o suficiente para serem trabalhadas em paralelo ou sequência sem bloqueios desnecessários.
+1. **Break into small tasks (Atomic Tasks)**: Break large features into small, autonomous tasks that a subagent can execute in isolation (e.g., "Create DB migration", "Update API route", "Fix component").
+2. **Visual clarity**: Always include a visual diagram (Mermaid) explaining the architecture or flow.
+3. **Traceability**: Maintain a clear `Todo List` with checkboxes to track status.
+4. **Isolation**: Tasks must be independent enough to be worked on in parallel or sequence without unnecessary blocking.
 
-## 📐 Estrutura do Plano
+## 📐 Plan Structure
 
-Todo plano em `.plans/` deve seguir esta estrutura:
+Every plan in `.plans/` must follow this structure:
 
-1. **Título e Objetivo**: O que estamos construindo?
-2. **Diagrama Visual**: Diagrama Mermaid da arquitetura/fluxo.
-3. **Todo List**: Lista de tarefas atômicas com checkboxes (ex: `- [ ] Tarefa 1`).
-4. **Detalhamento das Tarefas**: Instruções específicas para cada tarefa (arquivos a criar/modificar, lógica a implementar, critérios de aceitação).
-5. **Ordem de Execução**: Sequência recomendada (ex: `1.1 -> 1.2 -> 2.1`).
+1. **Title and Objective**: What are we building?
+2. **Visual Diagram**: Mermaid diagram of the architecture/flow.
+3. **Todo List**: List of atomic tasks with checkboxes (e.g., `- [ ] Task 1`).
+4. **Task Details**: Specific instructions for each task (files to create/modify, logic to implement, acceptance criteria).
+5. **Execution Order**: Recommended sequence (e.g., `1.1 -> 1.2 -> 2.1`).
 
-## 📝 Formato de Tarefa no Plano
+## 📝 Task Format in the Plan
 
-Para cada tarefa no plano, inclua:
+For each task in the plan, include:
 
 ```markdown
-#### **Tarefa X.Y** — Breve descrição
+#### **Task X.Y** — Brief description
 
-**Arquivo(s)**: `caminho/para/arquivo.ts` (novo ou modificado)
+**File(s)**: `path/to/file.ts` (new or modified)
 
-**O que fazer**:
-1. Passo 1...
-2. Passo 2...
+**What to do**:
+1. Step 1...
+2. Step 2...
 
-**Critérios de aceitação**:
-- Critério 1...
-- Critério 2...
+**Acceptance criteria**:
+- Criterion 1...
+- Criterion 2...
 ```
 
-## ⚠️ Regras de Execução
+## ⚠️ Execution Rules
 
-- **Sempre** execute testes unitários após cada tarefa.
-- **Sempre** rode linting antes de comitar.
-- **Sempre** atualize a `Todo List` no arquivo do plano após completar uma tarefa.
-- **Nunca** pule tarefas mesmo que pareçam óbvias.
-- **Garanta** que o subagent commite as mudanças antes de retornar ao loop principal.
+- **Always** run unit tests after each task.
+- **Always** run linting before committing.
+- **Always** update the `Todo List` in the plan file after completing a task.
+- **Never** skip tasks even if they seem obvious.
+- **Ensure** that the subagent commits the changes before returning to the main loop.
