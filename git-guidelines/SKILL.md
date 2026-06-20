@@ -46,7 +46,33 @@ description: Strict guidelines for Git operations. ALWAYS consult before perform
 
 ## ⚠️ Operações que Requerem Consentimento Explícito
 
+### Regra Geral de Permissão
+
+**A menos que o prompt do usuário diga explicitamente para executar commits ou pushes, você deve SEMPRE pedir permissão antes de executá-los.** Isso se aplica a `git commit`, `git push`, e qualquer operação que modifique o repositório de forma permanente.
+
+Se o usuário disser "commita tudo", "sube isso", "faz o push", etc., você **deve confirmar** os detalhes (mensagem, arquivos, branch) antes de executar.
+
+---
+
 ### Antes de executar, SEMPRE pergunte ao usuário:
+
+#### `git commit`
+
+Antes de fazer commit, pergunte:
+- Quais arquivos serão incluidos?
+- Qual a mensagem do commit?
+- O usuário confirmou que quer fazer commit?
+
+Exemplo de como perguntar:
+> "Desejo fazer `git add` nos arquivos X, Y, Z e `git commit -m 'mensagem'`. Confirmo?"
+
+#### `git push`
+
+Antes de fazer push, pergunte apenas:
+- O usuário confirmou que quer fazer push?
+
+Exemplo de como perguntar:
+> "Desejo fazer `git push`. Confirmo?"
 
 #### `git pull`
 
@@ -86,7 +112,7 @@ Exemplo de como perguntar:
 1. git status          → Verificar estado atual
 2. git diff            → Revisar mudanças
 3. git add             → Adicionar arquivos (NUNCA ignorados)
-4. git commit          → Usar Conventional Commits
+4. git commit          → ⚠️ PERGUNTAR ANTES (a menos que o prompt diga explicitamente)
 5. git pull            → ⚠️ PREGUNTAR ANTES
-6. git push            → PERGUNTAR ANTES. Sem force sem aprovação
+6. git push            → ⚠️ PERGUNTAR ANTES (a menos que o prompt diga explicitamente)
 ```
