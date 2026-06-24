@@ -1,6 +1,6 @@
 ---
 name: nextjs-setup
-description: Sets up a complete Next.js project with TypeScript, Vitest, Playwright, Tailwind CSS, Husky, commitlint, and GitHub Actions CI. Trigger words: criar projeto next, criar projeto nextjs, novo projeto next, nextjs starter, next project setup.
+description: "Sets up a complete Next.js project with TypeScript, Vitest, Playwright, Tailwind CSS, Husky, commitlint, and GitHub Actions CI. Trigger words: criar projeto next, criar projeto nextjs, novo projeto next, nextjs starter, next project setup."
 ---
 
 # Next.js Setup Skill

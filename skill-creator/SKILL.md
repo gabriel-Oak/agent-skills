@@ -1,6 +1,6 @@
 ---
 name: skill-creator
-description: Creates new pi-agent skills following established conventions. Trigger words: criar skill, criar habilidade, criar nova skill, criar nova habilidade, create skill, create new skill, new skill.
+description: "Creates new pi-agent skills following established conventions. Trigger words: criar skill, criar habilidade, criar nova skill, criar nova habilidade, create skill, create new skill, new skill."
 ---
 
 # Skill Creator Skill
