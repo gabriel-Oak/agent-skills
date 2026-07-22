@@ -13,7 +13,7 @@ Activate this skill whenever:
 
 ## 📂 Storage
 All plans must be saved in the `.plans/` directory.
-- Naming convention: `PLAN-<FEATURE>.md`.
+- Naming convention: `DD-MM-YYYY-PLAN-<FEATURE>.md`.
 
 ## 🧠 Core Principles
 
