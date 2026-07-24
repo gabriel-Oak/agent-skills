@@ -24,6 +24,19 @@ description: Orchestrates execution of plans by delegating tasks to subagents. A
 5. Verify → Tests passed? Lint clean? Plan updated? Commit made?
    - If subagent didn't mark the task, update `- [ ]` → `- [x]` manually
 6. Repeat → Go back to step 2 until all tasks are `[x]`
+7. Visual Debug → Execute `/skill:visual-debug` after all implementation tasks complete
+```
+
+### Visual Debug Phase (After All Tasks)
+
+**ALWAYS** execute visual debug after all implementation tasks:
+
+```
+1. Run: /skill:visual-debug
+2. Capture screenshots to `tmp/` directory
+3. Validate layouts (desktop + mobile)
+4. Update plan with visual validation status
+5. Get user approval before declaring complete
 ```
 
 ### When delegating (subagent prompt)
@@ -64,3 +77,6 @@ Before declaring the plan complete:
 - [ ] All tasks marked `[x]` in the plan
 - [ ] `git log` shows commits for all tasks
 - [ ] Zero lint errors, zero failing tests
+- [ ] Visual debug executed (`/skill:visual-debug`)
+- [ ] Screenshots saved to `tmp/`
+- [ ] User approved visual validation
